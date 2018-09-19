@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "start_url": "",
+  "description": "Sandbox app",
+  "icons": [{
+    "src": "",
+    "sizes": "400x400",
+    "type": "image/png"
+  }]
+}

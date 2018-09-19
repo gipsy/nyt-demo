@@ -1,0 +1,120 @@
+{
+  "name": "nytimes-api-consume-demo-app",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "react",
+    "redux",
+    "redux-bundler"
+  ],
+  "homepage": "",
+  "bugs": "",
+  "repository": "",
+  "license": "MIT",
+  "author": "Taras Gavrysh <ter4444@gmail.com>",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build-storybook": "build-storybook",
+    "precommit": "lint-staged",
+    "dev": "webpack-dev-server --mode development --hot",
+    "format": "prettier --write \"src/**/*.js\" && echo -e '\\033[0;32m'💅 Just use prettier'\\033[0m'",
+    "lint": "eslint src",
+    "publish-gh-pages": "npm run build-storybook && cd storybook-static && git init && git commit --allow-empty -m 'Update' && git checkout -b gh-pages && git add . && git commit -am 'Update' && git push git@github.com:gipsy/todo-demo gh-pages --force",
+    "start": "serve --single --cors dist",
+    "storybook": "start-storybook -p 6006"
+  },
+  "dependencies": {
+    "antd": "^3.9.1",
+    "internal-nav-helper": "^1.0.2",
+    "money-clip": "^2.1.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-async-component": "^2.0.0",
+    "react-dom": "^16.5.0",
+    "react-router-dom": "^4.3.1",
+    "redux-bundler": "^21.2.2",
+    "redux-bundler-react": "^1.0.1",
+    "styled-components": "^4.0.0-beta.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-async-to-generator": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/addon-storyshots": "^3.4.10",
+    "@storybook/addons": "^3.4.10",
+    "@storybook/react": "^3.4.10",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-styled-components": "^1.7.1",
+    "babel-runtime": "^6.26.0",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-react": "^7.11.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-inline-source-plugin": "^0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.0.0-rc.13",
+    "ignore-loader": "^0.1.2",
+    "jest": "^23.5.0",
+    "lint-staged": "^7.2.2",
+    "loki": "^0.13.0",
+    "prettier": "^1.14.2",
+    "react-hot-loader": "^4.3.6",
+    "react-test-renderer": "^16.5.0",
+    "serve": "^10.0.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.3.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-pwa-manifest": "^3.7.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false,
+        "fitWindow": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
+  }
+}
