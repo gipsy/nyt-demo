@@ -17,7 +17,7 @@ const render = () => {
 render()
 
 if (module.hot) {
-  module.hot.accept('./containers/root', () => {
+  module.hot.accept('@containers/root', () => {
     ReactDOM.unmountComponentAtNode(mountNode)
     render()
   })

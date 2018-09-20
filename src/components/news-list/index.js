@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Moment from 'moment'
 import { connect } from 'redux-bundler-react'
-import { List } from './styled'
 
 import NewsItem from '@components/news-item'
+import { List } from './styled'
 
 const NewsList = ({
   news,

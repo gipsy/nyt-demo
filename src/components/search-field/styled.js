@@ -18,17 +18,15 @@ const Input = styled(AntInput)`
 
 const Search = styled(AntInput.Search)`
   display: block;
-  width: 50%;
 `
 
 const CenterWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  resize: both;
-  overflow: auto;
   margin: 0 auto;
-  height: 100vh;
+  width: 50%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export {
