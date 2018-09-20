@@ -7,7 +7,9 @@ export default {
       loading: false,
       lastError: null,
       lastFetch: null,
+      page: null,
       query: null,
+      meta: null,
       data: null,
     }
 
@@ -32,6 +34,7 @@ export default {
           loading: false,
           lastError: null,
           data: payload.response.docs,
+          meta: payload.response.meta,
         })
       }
 
@@ -39,15 +42,15 @@ export default {
     }
   },
 
-  doFetchNews: (query, callback) => ({ dispatch, apiNYT }) => {
+  doFetchNews: (query, callback, page = 0) => ({ dispatch, apiNYT }) => {
     dispatch({ type: 'FETCH_NEWS_START', payload: query })
-    apiNYT('/', query)
+    apiNYT('/', query, page)
       .then((payload) => {
         dispatch({
           type: 'FETCH_NEWS_SUCCESS',
           payload
         })
-        console.log('NEWS')
+        console.log('RAW NEWS')
         console.log(payload)
         callback()
       })
@@ -63,7 +66,13 @@ export default {
   // selector for just the actual data if we have it
   selectNews: (state) => state.news.data,
 
+  selectMeta: (state) => state.news.meta,
+
   selectQuery: (state) => state.news.query,
+
+  selectPage: (state) => state.news.page,
+
+  selectLoading: (state) => state.news.loading,
 
   // we'll extract a status string here, for display, just to show
   // the type of information available about the data

@@ -8,18 +8,26 @@ import { List } from './styled'
 
 const NewsList = ({
   news,
+  meta,
   query,
-  doOpenModal,
-  doUpdatePagination,
+  page,
+  loading,
+  doPreviewArticle,
+  doFetchNews
 }) => {
 
   const events = {
-    doOpenModal,
-    doUpdatePagination,
+    doPreviewArticle,
   }
 
+  console.log('meta.hits')
+  console.log(meta.hits)
+  console.log('query: ' + query)
+  console.log('page: ' + page)
+  console.log('loading: ' + loading)
+
   // filter news to show only articles and reverse
-  const articles = news.filter((item) => item.document_type === 'article').reverse()
+  // const articles = news.filter((item) => item.document_type === 'article').reverse()
 
   return(
     <List
@@ -27,11 +35,18 @@ const NewsList = ({
       size="large"
       pagination={{
         onChange: (page) => {
-          console.log(page)
+          doFetchNews(query, () => {
+            console.log('fetch success')
+          }, page - 1)
         },
-        pageSize: 10
+        pageSize: 10,
+        position: 'both',
+        total: meta.hits,
+        showTotal: (total) => `Total ${meta.hits} items`,
+        defaultCurrent: 1
       }}
-      dataSource={articles}
+      loading={loading}
+      dataSource={news}
       renderItem={(item) => (
         <NewsItem key={item._id} item={item} {...events} />
       )}
@@ -41,9 +56,12 @@ const NewsList = ({
 
 export default connect(
   'selectNews',
+  'selectMeta',
   'selectQuery',
-  'doUpdatePagination',
-  'doOpenModal',
+  'selectPage',
+  'selectLoading',
+  'doFetchNews',
+  'doPreviewArticle',
   NewsList
 )
 

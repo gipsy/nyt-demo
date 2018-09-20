@@ -1,21 +1,18 @@
 const API_KEY = '5763846de30d489aa867f0711e2b031c'
 let query = 'ukraine'
-let page = 0
 
 export default {
   name: 'extra-args',
   getExtraArgs: (store) => {
     return {
-      apiNYT: (urlPath, query) =>
+      apiNYT: (urlPath, query, page) =>
         // if your API requires an authentication token or whatnot
         // here would be a great place to select it from your store
         // and pass it along with the fetch. Then none of your individual
         // action creators need to worry about this.
-        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&page=${page}&api-key=${API_KEY}`, {
+        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&page=${page}&type=article&api-key=${API_KEY}`, {
           credentials: 'same-origin',
           method: 'GET',
-          // body: JSON.stringify(data),
-          // headers: new Headers({ 'Content-Type': 'application/json' }),
         })
           .then((res) => res.json())
           .catch((err) => {

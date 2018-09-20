@@ -2,7 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'redux-bundler-react'
 import navHelper from 'internal-nav-helper'
-import { Icon, Button, Input, Search, CenterWrapper } from './styled'
+import { 
+  Icon, 
+  Button,
+  Input,
+  Search,
+  CenterWrapper
+} from './styled'
 
 const SearchField = ({
   doFetchNews,
