@@ -27,6 +27,7 @@
   "dependencies": {
     "antd": "^3.9.1",
     "internal-nav-helper": "^1.0.2",
+    "moment": "^2.22.2",
     "money-clip": "^2.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",

@@ -7,6 +7,7 @@ export default {
       loading: false,
       lastError: null,
       lastFetch: null,
+      query: null,
       data: null,
     }
 
@@ -14,6 +15,7 @@ export default {
       if (type === 'FETCH_NEWS_START') {
         return Object.assign({}, state, {
           loading: true,
+          query: payload
         })
       }
 
@@ -29,7 +31,7 @@ export default {
           lastFetch: Date.now(),
           loading: false,
           lastError: null,
-          data: payload,
+          data: payload.response.docs,
         })
       }
 
@@ -38,13 +40,15 @@ export default {
   },
 
   doFetchNews: (query, callback) => ({ dispatch, apiNYT }) => {
-    dispatch({ type: 'FETCH_NEWS_START' })
+    dispatch({ type: 'FETCH_NEWS_START', payload: query })
     apiNYT('/', query)
       .then((payload) => {
         dispatch({
           type: 'FETCH_NEWS_SUCCESS',
           payload
         })
+        console.log('NEWS')
+        console.log(payload)
         callback()
       })
       .catch((err) => {
@@ -58,6 +62,8 @@ export default {
 
   // selector for just the actual data if we have it
   selectNews: (state) => state.news.data,
+
+  selectQuery: (state) => state.news.query,
 
   // we'll extract a status string here, for display, just to show
   // the type of information available about the data

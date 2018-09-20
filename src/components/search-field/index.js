@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'redux-bundler-react'
-import styled from 'styled-components'
-import { Icon, Button, Input, Search, CenterWrapper } from './styled.js'
+import { Icon, Button, Input, Search, CenterWrapper } from './styled'
 
 const SearchField = ({
   doFetchNews,
@@ -12,7 +11,7 @@ const SearchField = ({
   function handleSubmit(val) {
     doFetchNews(val, () => {
       doUpdateUrl('/news-list')
-      window.location.reload(true)
+      // window.location.reload(true)
     })
   }
 
@@ -32,5 +31,5 @@ const SearchField = ({
 export default connect(
   'doFetchNews',
   'doUpdateUrl',
-  SearchField,
+  SearchField
 )
