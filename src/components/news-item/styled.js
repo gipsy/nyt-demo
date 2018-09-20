@@ -32,10 +32,17 @@ const Source = styled.p`
   display: block;
 `
 
+const Title = styled.a`
+  font-family: 'Noto Serif KR', sans-serif;
+  font-size; 16px;
+  font-weight: bold;
+`
+
 export {
   Item,
   Avatar,
   Meta,
   Date,
   Source,
+  Title,
 }

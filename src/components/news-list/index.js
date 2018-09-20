@@ -10,7 +10,6 @@ const NewsList = ({
   news,
   meta,
   query,
-  page,
   loading,
   doPreviewArticle,
   doFetchNews
@@ -20,30 +19,20 @@ const NewsList = ({
     doPreviewArticle,
   }
 
-  console.log('meta.hits')
-  console.log(meta.hits)
-  console.log('query: ' + query)
-  console.log('page: ' + page)
-  console.log('loading: ' + loading)
-
-  // filter news to show only articles and reverse
-  // const articles = news.filter((item) => item.document_type === 'article').reverse()
-
   return(
     <List
       itemLayout="vertical"
       size="large"
       pagination={{
         onChange: (page) => {
-          doFetchNews(query, () => {
-            console.log('fetch success')
-          }, page - 1)
+          doFetchNews(query, undefined, page - 1)
         },
         pageSize: 10,
         position: 'both',
         total: meta.hits,
         showTotal: (total) => `Total ${meta.hits} items`,
-        defaultCurrent: 1
+        defaultCurrent: 1,
+        simple: window.innerWidth < 400 ? true : false
       }}
       loading={loading}
       dataSource={news}
@@ -58,7 +47,6 @@ export default connect(
   'selectNews',
   'selectMeta',
   'selectQuery',
-  'selectPage',
   'selectLoading',
   'doFetchNews',
   'doPreviewArticle',

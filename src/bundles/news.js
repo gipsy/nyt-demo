@@ -5,12 +5,14 @@ export default {
   getReducer: () => {
     const initialState = {
       loading: false,
+      drawer: false,
       lastError: null,
       lastFetch: null,
-      page: null,
+      // page: null,
       query: null,
       meta: null,
       data: null,
+      article: null,
     }
 
     return (state = initialState, { type, payload }) => {
@@ -38,6 +40,20 @@ export default {
         })
       }
 
+      if (type === 'OPEN_PREVIEW_ARTICLE_DRAWER') {
+        return Object.assign({}, state, {
+          drawer: true,
+          article: payload
+        })
+      }
+
+      if (type === 'CLOSE_PREVIEW_ARTICLE_DRAWER') {
+        return Object.assign({}, state, {
+          drawer: false,
+          // article: null
+        })
+      }
+
       return state
     }
   },
@@ -50,13 +66,23 @@ export default {
           type: 'FETCH_NEWS_SUCCESS',
           payload
         })
-        console.log('RAW NEWS')
-        console.log(payload)
-        callback()
+        callback && callback()
       })
       .catch((err) => {
         dispatch({ type: 'FETCH_NEWS_ERROR', err })
       })
+  },
+
+  doPreviewArticle: (e, id) => ({ dispatch, getState }) => {
+    e.preventDefault()
+    dispatch({ 
+      type: 'OPEN_PREVIEW_ARTICLE_DRAWER', 
+      payload: getState().news.data.find((article) => article._id === id)
+    })
+  },
+
+  doCloseDrawer: () => ({ dispatch }) => {
+    dispatch({ type: 'CLOSE_PREVIEW_ARTICLE_DRAWER' })
   },
 
   // selector for the whole contents of the reducer
@@ -70,9 +96,13 @@ export default {
 
   selectQuery: (state) => state.news.query,
 
-  selectPage: (state) => state.news.page,
+  // selectPage: (state) => state.news.page,
 
   selectLoading: (state) => state.news.loading,
+
+  selectDrawer: (state) => state.news.drawer,
+
+  selectPreviewArticleContent: (state) => state.news.article,
 
   // we'll extract a status string here, for display, just to show
   // the type of information available about the data
