@@ -18,7 +18,7 @@ const Snippet = styled.p`
   margin-top: 20px;
 `
 
-const Source = styled.p`
+const Source = styled.span`
   text-transform: uppercase;
   font-size: 12px;
   color: #ddd;

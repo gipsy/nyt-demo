@@ -1,5 +1,4 @@
 const API_KEY = '5763846de30d489aa867f0711e2b031c'
-let query = 'ukraine'
 
 export default {
   name: 'extra-args',

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Moment from 'moment'
-import IconText from '@components/icon-text'
 import { Item, Meta, Avatar, Date, Source, Title } from './styled'
 
 const NewsItem = ({
@@ -18,9 +17,10 @@ const NewsItem = ({
   doPreviewArticle,
 }) => {
   const thumb =
-    multimedia.length > 0
+    multimedia.length > 0 &&
+    multimedia.find((item) => item.subtype === 'thumbnail') !== undefined
       ? `https://graphics8.nytimes.com/${
-          multimedia.find((item) => item.subType === 'thumbnail').url
+          multimedia.find((item) => item.subtype === 'thumbnail').url
         }`
       : 'https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg'
 
@@ -39,6 +39,11 @@ const NewsItem = ({
       <Date>{Moment(pub_date).fromNow()}</Date>
     </Item>
   )
+}
+
+NewsItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  doPreviewArticle: PropTypes.func.isRequired,
 }
 
 export default NewsItem

@@ -8,7 +8,6 @@ export default {
       drawer: false,
       lastError: null,
       lastFetch: null,
-      // page: null,
       query: null,
       meta: null,
       data: null,
@@ -50,7 +49,6 @@ export default {
       if (type === 'CLOSE_PREVIEW_ARTICLE_DRAWER') {
         return Object.assign({}, state, {
           drawer: false,
-          // article: null
         })
       }
 
@@ -95,8 +93,6 @@ export default {
   selectMeta: (state) => state.news.meta,
 
   selectQuery: (state) => state.news.query,
-
-  // selectPage: (state) => state.news.page,
 
   selectLoading: (state) => state.news.loading,
 

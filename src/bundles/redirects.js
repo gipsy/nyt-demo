@@ -1,8 +1,6 @@
 import { createSelector } from 'redux-bundler'
 
-const publicUrls = ['/', '/news']
-
-// this single app spot where all redirects may occur
+// this is appropriate place all application redirects should be resolved
 export default {
   name: 'redirects',
   reactRedirects: createSelector('selectPathname', (pathname) => {

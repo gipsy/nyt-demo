@@ -1,22 +1,11 @@
 import styled from 'styled-components'
-import { Icon as AntIcon, Button as AntButton, Input as AntInput } from 'antd'
-
-const Icon = styled(AntIcon)`
-  display: block;
-`
-const Button = styled(AntButton)`
-  display: block;
-`
-
-const Input = styled(AntInput)`
-  display: block;
-`
+import { Input as AntInput } from 'antd'
 
 const Search = styled(AntInput.Search)`
   display: block;
 `
 
-const CenterWrapper = styled.div`
+const Wrapper = styled.div`
   margin: 0 auto;
   width: 50%;
 
@@ -25,4 +14,4 @@ const CenterWrapper = styled.div`
   }
 `
 
-export { Icon, Button, Input, Search, CenterWrapper }
+export { Search, Wrapper }

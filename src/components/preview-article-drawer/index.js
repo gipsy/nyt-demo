@@ -58,6 +58,12 @@ const PreviewArticleDrawer = ({
   )
 }
 
+PreviewArticleDrawer.propTypes = {
+  previewArticleContent: PropTypes.object,
+  drawer: PropTypes.bool,
+  doCloseDrawer: PropTypes.func.isRequired,
+}
+
 export default connect(
   'selectPreviewArticleContent',
   'selectDrawer',
