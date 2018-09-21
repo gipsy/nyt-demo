@@ -31,7 +31,7 @@ const Source = styled.p`
 
 const Title = styled.a`
   font-family: 'Noto Serif KR', sans-serif;
-  font-size; 16px;
+  font-size: 16px;
   font-weight: bold;
 `
 

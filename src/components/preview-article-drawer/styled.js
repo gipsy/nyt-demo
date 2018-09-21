@@ -4,6 +4,10 @@ const Headline = styled.h2`
   font-family: 'Noto Serif KR', sans-serif;
   font-size: 28px;
   color: #000;
+
+  @media (max-width: 600px) {
+    font-size: 23px;
+  }
 `
 
 const ArticleMedia = styled.img`

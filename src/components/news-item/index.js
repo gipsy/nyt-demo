@@ -12,7 +12,6 @@ const NewsItem = ({
     source,
     web_url,
     headline,
-    score,
   },
   doPreviewArticle,
 }) => {

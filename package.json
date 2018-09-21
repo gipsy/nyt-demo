@@ -5,7 +5,8 @@
   "keywords": [
     "react",
     "redux",
-    "redux-bundler"
+    "redux-bundler",
+    "nyt-api"
   ],
   "homepage": "",
   "bugs": "",
@@ -25,15 +26,13 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "antd": "^3.9.1",
+    "antd": "^3.9.2",
     "internal-nav-helper": "^1.0.2",
     "moment": "^2.22.2",
     "money-clip": "^2.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
-    "react-async-component": "^2.0.0",
     "react-dom": "^16.5.0",
-    "react-router-dom": "^4.3.1",
     "redux-bundler": "^21.2.2",
     "redux-bundler-react": "^1.0.1",
     "styled-components": "^4.0.0-beta.3"
