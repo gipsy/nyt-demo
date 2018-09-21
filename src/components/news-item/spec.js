@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NewsItem from '@components/news-item'
+import NewsItem from '.'
 
 it('renders element at DOM', () => {
   const div = document.createElement('div')

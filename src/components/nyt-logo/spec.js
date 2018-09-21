@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NYTimesLogo from '@components/nyt-logo'
+import NYTimesLogo from '.'
 
 it('renders element at DOM', () => {
   const div = document.createElement('div')

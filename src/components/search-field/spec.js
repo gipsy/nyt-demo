@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import SearchField from '@components/search-field'
+import SearchField from '.'
 
 it('renders item at DOM', () => {
   const div = document.createElement('div')
