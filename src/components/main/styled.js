@@ -6,6 +6,4 @@ const Main = styled.main`
   padding: 20px;
 `
 
-export {
-  Main
-}
+export { Main }

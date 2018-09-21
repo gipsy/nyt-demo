@@ -12,14 +12,13 @@ const NewsList = ({
   query,
   loading,
   doPreviewArticle,
-  doFetchNews
+  doFetchNews,
 }) => {
-
   const events = {
     doPreviewArticle,
   }
 
-  return(
+  return (
     <List
       itemLayout="vertical"
       size="large"
@@ -32,13 +31,11 @@ const NewsList = ({
         total: meta.hits,
         showTotal: (total) => `Total ${meta.hits} items`,
         defaultCurrent: 1,
-        simple: window.innerWidth < 400 ? true : false
+        simple: window.innerWidth < 400 ? true : false,
       }}
       loading={loading}
       dataSource={news}
-      renderItem={(item) => (
-        <NewsItem key={item._id} item={item} {...events} />
-      )}
+      renderItem={(item) => <NewsItem key={item._id} item={item} {...events} />}
     />
   )
 }
@@ -50,6 +47,5 @@ export default connect(
   'selectLoading',
   'doFetchNews',
   'doPreviewArticle',
-  NewsList
+  NewsList,
 )
-

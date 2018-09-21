@@ -5,7 +5,4 @@ const List = styled(AntList)`
   display: block;
 `
 
-export {
-  List,
-}
-
+export { List }

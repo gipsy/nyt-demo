@@ -2,26 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'redux-bundler-react'
 import navHelper from 'internal-nav-helper'
-import { 
-  Icon, 
-  Button,
-  Input,
-  Search,
-  CenterWrapper
-} from './styled'
+import { Icon, Button, Input, Search, CenterWrapper } from './styled'
 
-const SearchField = ({
-  doFetchNews,
-  doUpdateUrl,
-}) => {
-
+const SearchField = ({ doFetchNews, doUpdateUrl }) => {
   function handleSubmit(val) {
     doFetchNews(val, () => {
       navHelper(doUpdateUrl('/news'))
     })
   }
 
-  return(
+  return (
     <CenterWrapper>
       <Search
         placeholder="input search text"
@@ -36,5 +26,5 @@ const SearchField = ({
 export default connect(
   'doFetchNews',
   'doUpdateUrl',
-  SearchField
+  SearchField,
 )

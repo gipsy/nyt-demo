@@ -3,9 +3,8 @@ import NewsList from '@components/news-list'
 
 const NewsPage = () => (
   <>
-    <NewsList/>
+    <NewsList />
   </>
 )
 
 export default NewsPage
-

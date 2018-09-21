@@ -16,7 +16,4 @@ const Logo = styled.svg`
   display: block;
 `
 
-export {
-  Wrapper,
-  Logo
-}
+export { Wrapper, Logo }

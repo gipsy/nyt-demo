@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-import {
-  List,
-  Avatar as AntAvatar,
-} from 'antd'
+import { List, Avatar as AntAvatar } from 'antd'
 
 const Item = styled(List.Item)`
   display: block;
@@ -38,11 +35,4 @@ const Title = styled.a`
   font-weight: bold;
 `
 
-export {
-  Item,
-  Avatar,
-  Meta,
-  Date,
-  Source,
-  Title,
-}
+export { Item, Avatar, Meta, Date, Source, Title }

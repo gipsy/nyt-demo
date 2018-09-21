@@ -4,7 +4,6 @@ const Headline = styled.h2`
   font-family: 'Noto Serif KR', sans-serif;
   font-size: 28px;
   color: #000;
-  margin-top: 30px;
 `
 
 const ArticleMedia = styled.img`
@@ -16,6 +15,7 @@ const ArticleMedia = styled.img`
 const Snippet = styled.p`
   font-size: 16px;
   color: #000;
+  margin-top: 20px;
 `
 
 const Source = styled.p`
@@ -33,10 +33,4 @@ const Date = styled.time`
   float: right;
 `
 
-export {
-  Headline,
-  ArticleMedia,
-  Snippet,
-  Source,
-  Date,
-}
+export { Headline, ArticleMedia, Snippet, Source, Date }

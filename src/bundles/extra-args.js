@@ -10,10 +10,13 @@ export default {
         // here would be a great place to select it from your store
         // and pass it along with the fetch. Then none of your individual
         // action creators need to worry about this.
-        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&page=${page}&type=article&api-key=${API_KEY}`, {
-          credentials: 'same-origin',
-          method: 'GET',
-        })
+        fetch(
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&page=${page}&type=article&api-key=${API_KEY}`,
+          {
+            credentials: 'same-origin',
+            method: 'GET',
+          },
+        )
           .then((res) => res.json())
           .catch((err) => {
             // if you wanted to, you could look for errors caused
@@ -28,5 +31,5 @@ export default {
             throw err
           }),
     }
-  }
+  },
 }

@@ -11,7 +11,7 @@ import 'antd/dist/antd.css'
 const AppRoot = ({ route, previewArticleContent }) => {
   const Page = route
 
-  return(
+  return (
     <>
       <NYTimesLogo />
       <Main>
@@ -22,7 +22,9 @@ const AppRoot = ({ route, previewArticleContent }) => {
   )
 }
 
-export default hot(module)(connect(
-  'selectRoute',
-  AppRoot
-))
+export default hot(module)(
+  connect(
+    'selectRoute',
+    AppRoot,
+  ),
+)

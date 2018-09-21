@@ -19,7 +19,7 @@ export default {
       if (type === 'FETCH_NEWS_START') {
         return Object.assign({}, state, {
           loading: true,
-          query: payload
+          query: payload,
         })
       }
 
@@ -43,7 +43,7 @@ export default {
       if (type === 'OPEN_PREVIEW_ARTICLE_DRAWER') {
         return Object.assign({}, state, {
           drawer: true,
-          article: payload
+          article: payload,
         })
       }
 
@@ -64,7 +64,7 @@ export default {
       .then((payload) => {
         dispatch({
           type: 'FETCH_NEWS_SUCCESS',
-          payload
+          payload,
         })
         callback && callback()
       })
@@ -75,9 +75,9 @@ export default {
 
   doPreviewArticle: (e, id) => ({ dispatch, getState }) => {
     e.preventDefault()
-    dispatch({ 
-      type: 'OPEN_PREVIEW_ARTICLE_DRAWER', 
-      payload: getState().news.data.find((article) => article._id === id)
+    dispatch({
+      type: 'OPEN_PREVIEW_ARTICLE_DRAWER',
+      payload: getState().news.data.find((article) => article._id === id),
     })
   },
 
@@ -199,5 +199,5 @@ export default {
       }
     },
   ),
-  persistActions: ['FETCH_NEWS_SUCCESS']
+  persistActions: ['FETCH_NEWS_SUCCESS'],
 }

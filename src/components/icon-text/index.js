@@ -11,10 +11,7 @@ const IconText = ({ type, text }) => (
 
 IconText.propTypes = {
   type: PropTypes.string.isRequired,
-  text: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
 
 export default IconText
