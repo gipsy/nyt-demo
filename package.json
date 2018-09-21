@@ -23,7 +23,8 @@
     "lint": "eslint src",
     "publish-gh-pages": "npm run build-storybook && cd storybook-static && git init && git commit --allow-empty -m 'Update' && git checkout -b gh-pages && git add . && git commit -am 'Update' && git push git@github.com:gipsy/todo-demo gh-pages --force",
     "start": "serve --single --cors dist",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "test": "jest"
   },
   "dependencies": {
     "antd": "^3.9.2",
