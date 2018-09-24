@@ -42,7 +42,7 @@ const NewsItem = ({
 
 NewsItem.propTypes = {
   item: PropTypes.object.isRequired,
-  doPreviewArticle: PropTypes.func.isRequired,
+  doPreviewArticle: PropTypes.func,
 }
 
 export default NewsItem
