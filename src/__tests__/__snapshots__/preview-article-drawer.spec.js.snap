@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PreviewArticleDrawer renders without crashing 1`] = `
+<e>
+  <PreviewArticleDrawer
+    doCloseDrawer={[Function]}
+    drawer={false}
+    previewArticleContent={
+      Object {
+        "_id": "5ba46d04068401528a2dc251",
+        "headline": Object {
+          "main": "Singapore, for Those Who Aren’t Crazy Rich",
+          "print_headline": "Singapore, if You’re Not Crazy Rich",
+        },
+        "multimedia": Array [
+          Object {
+            "subtype": "jumbo",
+            "url": "images/2018/09/23/travel/23singapore1/merlin_142944708_9276e9dd-b36e-40f3-90f6-34e79e64552e-jumbo.jpg",
+          },
+        ],
+        "pub_date": "2018-09-21T04:01:06+0000",
+        "snippet": "In the hit movie “Crazy Rich Asians,” the country looks luxe. But it’s easy to have a great time (and eat memorably well) without spending much.",
+        "source": "The New York Times",
+        "web_url": "https://www.nytimes.com/2018/09/21/travel/singapore-travel-budget.html",
+      }
+    }
+  >
+    <Drawer
+      closable={true}
+      height={256}
+      level={null}
+      maskClosable={true}
+      onClose={[Function]}
+      placement="right"
+      prefixCls="ant-drawer"
+      visible={false}
+      width="50%"
+    >
+      <Drawer
+        className=""
+        closable={true}
+        duration=".3s"
+        ease="cubic-bezier(0.78, 0.14, 0.15, 0.86)"
+        firstEnter={false}
+        getContainer="body"
+        handler={false}
+        level={null}
+        maskClosable={true}
+        maskStyle={Object {}}
+        onChange={[Function]}
+        onClose={[Function]}
+        onHandleClick={[Function]}
+        onMaskClick={[Function]}
+        open={false}
+        placement="right"
+        prefixCls="ant-drawer"
+        showMask={true}
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
+        visible={false}
+        width="50%"
+        wrapperClassName=""
+      />
+    </Drawer>
+  </PreviewArticleDrawer>
+</e>
+`;

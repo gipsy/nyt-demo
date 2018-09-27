@@ -7,6 +7,8 @@ const mountNode = document.getElementById('root')
 
 const render = () => {
   cache.getAll().then((initialData) => {
+    console.log('initialData')
+    console.log(initialData)
     if (initialData && process.env.NODE_ENV === 'development') {
       console.log('starting with locally cache data:', initialData)
     }

@@ -63,6 +63,9 @@
     "babel-plugin-styled-components": "^1.7.1",
     "babel-runtime": "^6.26.0",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.5.0",
     "eslint-plugin-react": "^7.11.1",
     "html-loader": "^0.5.5",
@@ -127,10 +130,19 @@
       "src"
     ],
     "moduleNameMapper": {
-      "^@components(.*)$": "<rootDir>/src/components$1"
+      "^@components(.*)$": "<rootDir>/src/components$1",
+      "^@bundles(.*)$": "<rootDir>/src/bundles$1",
+      "^@common(.*)$": "<rootDir>/src/common$1",
+      "^@screens(.*)$": "<rootDir>/src/screens$1"
     },
     "testPathIgnorePatterns": [
-      "mock.js"
+      "config.js",
+      "initial-data.js",
+      "store-mock.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/config.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "resolutions": {
