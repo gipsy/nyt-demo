@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { store } from './store-mock'
+import { store } from './config/store-mock'
 
 import SearchField from '@components/search-field'
 

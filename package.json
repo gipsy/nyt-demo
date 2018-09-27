@@ -140,7 +140,7 @@
       "initial-data.js",
       "store-mock.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/config.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/config/config.js",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]

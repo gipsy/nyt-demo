@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { initialData } from './initial-data'
+import { initialData } from './config/initial-data'
 
 import NewsItem from '@components/news-item'
 
