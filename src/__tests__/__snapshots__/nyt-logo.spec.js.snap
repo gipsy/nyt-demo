@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NYTimesLogo renders without craching 1`] = `
+exports[`NYTimesLogo renders without crashing 1`] = `
 <NYTimesLogo>
   <ForwardRef>
     <StyledComponent

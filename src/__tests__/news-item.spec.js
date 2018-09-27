@@ -7,6 +7,7 @@ import NewsItem from '@components/news-item'
 describe('NewsItem', () => {
   it('renders without crashing', () => {
     const wrap = mount(<NewsItem item={initialData.news.data[0]} />)
+    expect(wrap.find(NewsItem).exists()).toBeTruthy()
     expect(wrap).toMatchSnapshot()
     wrap.unmount()
   })

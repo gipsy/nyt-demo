@@ -7,10 +7,9 @@ import SearchField from '@components/search-field'
 describe('SearchField', () => {
   it('renders without crashing', () => {
     const wrap = mount(<SearchField />, { context: { store } })
+    expect(wrap.find(SearchField).exists()).toBeTruthy()
+    expect(wrap.find('button').text()).toEqual('Search')
     expect(wrap).toMatchSnapshot()
-    expect(
-      wrap.find('button').text()
-    ).toEqual('Search')
     wrap.unmount()
   })
 })
