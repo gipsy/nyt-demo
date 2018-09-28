@@ -5,11 +5,24 @@ import { store } from './config/store-mock'
 import SearchField from '@components/search-field'
 
 describe('SearchField', () => {
-  it('renders without crashing', () => {
-    const wrap = mount(<SearchField />, { context: { store } })
-    expect(wrap.find(SearchField).exists()).toBeTruthy()
-    expect(wrap.find('button').text()).toEqual('Search')
-    expect(wrap).toMatchSnapshot()
+  let wrap
+  beforeEach(() => {
+    wrap = mount(<SearchField />, { context: { store } })
+  })
+
+  afterEach(() => {
     wrap.unmount()
+  })
+
+  it('renders without crashing', () => {
+    expect(wrap).toMatchSnapshot()
+  })
+
+  it('renders actual component', () => {
+    expect(wrap.find(SearchField).exists()).toBeTruthy()
+  })
+
+  it('renders button with appropriate text', () => {
+    expect(wrap.find('button').text()).toEqual('Search')
   })
 })

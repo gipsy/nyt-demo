@@ -5,10 +5,20 @@ import { initialData } from './config/initial-data'
 import NewsItem from '@components/news-item'
 
 describe('NewsItem', () => {
-  it('renders without crashing', () => {
-    const wrap = mount(<NewsItem item={initialData.news.data[0]} />)
-    expect(wrap.find(NewsItem).exists()).toBeTruthy()
-    expect(wrap).toMatchSnapshot()
+  let wrap
+  beforeEach(() => {
+    wrap = mount(<NewsItem item={ initialData.news.data[0] } />)
+  })
+
+  afterEach(() => {
     wrap.unmount()
+  })
+
+  it('renders without crashing', () => {
+    expect(wrap).toMatchSnapshot()
+  })
+
+  it('renders actual component', () => {
+    expect(wrap.find(NewsItem).exists()).toBeTruthy()
   })
 })

@@ -136,11 +136,13 @@
       "^@screens(.*)$": "<rootDir>/src/screens$1"
     },
     "testPathIgnorePatterns": [
-      "config.js",
+      "setup.js",
       "initial-data.js",
       "store-mock.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/config/config.js",
+    "setupFiles": [
+      "<rootDir>/src/__tests__/config/setup.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]

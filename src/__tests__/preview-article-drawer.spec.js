@@ -5,10 +5,20 @@ import { store } from './config/store-mock'
 import PreviewArticleDrawer from '@components/preview-article-drawer'
 
 describe('PreviewArticleDrawer', () => {
-  it('renders without crashing', () => {
-    const wrap = mount(<PreviewArticleDrawer />, { context: { store } })
-    expect(wrap.find(PreviewArticleDrawer).exists()).toBeTruthy()
-    expect(wrap).toMatchSnapshot()
+  let wrap
+  beforeEach(() => {
+    wrap = mount(<PreviewArticleDrawer />, { context: { store } })
+  })
+
+  afterEach(() => {
     wrap.unmount()
+  })
+
+  it('renders without crashing', () => {
+    expect(wrap).toMatchSnapshot()
+  })
+
+  it('renders actual component', () => {
+    expect(wrap.find(PreviewArticleDrawer).exists()).toBeTruthy()
   })
 })
