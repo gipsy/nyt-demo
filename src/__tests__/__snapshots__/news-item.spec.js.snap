@@ -324,7 +324,7 @@ exports[`NewsItem renders without crashing 1`] = `
                     <time
                       className="styled__Date-npycut-3 hajHJw"
                     >
-                      7 days ago
+                      9 days ago
                     </time>
                   </StyledComponent>
                 </ForwardRef>
