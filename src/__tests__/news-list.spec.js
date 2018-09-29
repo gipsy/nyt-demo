@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { store } from './config/store-mock'
+import { store } from './config/store'
 
 import NewsList from '@components/news-list'
 

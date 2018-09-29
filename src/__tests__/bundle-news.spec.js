@@ -1,6 +1,8 @@
 import React from 'react'
+import { Reducer } from 'redux-testkit'
 import { composeBundles } from 'redux-bundler'
 import { initialData } from './config/initial-data'
+import { payloadMock } from './config/payload-mock'
 import news from '@bundles/news'
 import extraArgs from '@bundles/extra-args'
 
@@ -99,4 +101,109 @@ describe('bundles/news', () => {
     store.doCloseDrawer()
     expect(store.selectDrawer()).toEqual(false)
   })
+
+  it('should handle FETCH_NEWS_START action on initial state', () => {
+    const action = { type: 'FETCH_NEWS_START' }
+
+    const result = { 
+      article: null, 
+      data: null, 
+      drawer: false,
+      lastError: null, 
+      lastFetch: null, 
+      loading: true, 
+      meta: null, 
+      query: undefined 
+    }
+
+    Reducer(news.getReducer()).expect(action).toReturnState(result)
+  })
+
+  it('should handle FETCH_NEWS_START action on existing state', () => {
+    const action = { type: 'FETCH_NEWS_START', payload: 'ukraine' }
+
+    const state = { 
+      loading: true,
+      query: 'singapore'
+    }
+
+    const result = { 
+      loading: true, 
+      query: 'ukraine'
+    }
+
+    Reducer(news.getReducer()).withState(state).expect(action).toReturnState(result)
+  })
+
+  it('should handle FETCH_NEWS_ERROR action on initial state', () => {
+    const action = { type: 'FETCH_NEWS_ERROR' }
+
+    const result = { 
+      article: null, 
+      data: null, 
+      drawer: false,
+      lastError: Date.now(), 
+      lastFetch: null, 
+      loading: false, 
+      meta: null, 
+      query: null
+    }
+
+    Reducer(news.getReducer()).expect(action).toReturnState(result)
+  })
+
+  it('should handle FETCH_NEWS_ERROR action on existing state', () => {
+    const action = { type: 'FETCH_NEWS_ERROR' }
+
+    const state = { 
+      lastError: null,
+      loading: true
+    }
+
+    const result = { 
+      lastError: Date.now(),
+      loading: false
+    }
+
+    Reducer(news.getReducer()).withState(state).expect(action).toReturnState(result)
+  })
+
+  // it('should handle FETCH_NEWS_SUCCESS action on initial state', () => {
+  //   const action = { type: 'FETCH_NEWS_SUCCESS', payload: payloadMock }
+  //
+  //   const result = { 
+  //     article: null, 
+  //     data: initialData.news, 
+  //     drawer: false,
+  //     lastError: null, 
+  //     lastFetch: Date.now(), 
+  //     loading: false, 
+  //     meta: initialData.meta, 
+  //     query: null
+  //   }
+  //
+  //   Reducer(news.getReducer()).expect(action).toReturnState(result)
+  // })
+
+  // it('should handle FETCH_NEWS_SUCCESS action on existing state', () => {
+  //   const action = { type: 'FETCH_NEWS_SUCCESS', payload: payloadMock }
+  //
+  //   const state = { 
+  //     lastFetch: null,
+  //     loading: false,
+  //     lastError: null,
+  //     data: null,
+  //     meta: null
+  //   }
+  //
+  //   const result = { 
+  //     lastFetch: Date.now(),
+  //     loading: false,
+  //     lastError: null,
+  //     data: payloadMock.response.data,
+  //     meta: payloadMock.response.meta
+  //   }
+  //
+  //   Reducer(news.getReducer()).withState(state).expect(action).toReturnState(result)
+  // })
 })
