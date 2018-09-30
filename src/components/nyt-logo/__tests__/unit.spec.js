@@ -1,13 +1,13 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { initialData } from './config/initial-data'
+import { store } from '@tests/store'
 
-import NewsItem from '@components/news-item'
+import NYTimesLogo from '@components/nyt-logo'
 
-describe('NewsItem', () => {
+describe('NYTimesLogo', () => {
   let wrap
   beforeEach(() => {
-    wrap = mount(<NewsItem item={ initialData.news.data[0] } />)
+    wrap = mount(<NYTimesLogo />, { context: { store } })
   })
 
   afterEach(() => {
@@ -19,6 +19,6 @@ describe('NewsItem', () => {
   })
 
   it('renders actual component', () => {
-    expect(wrap.find(NewsItem).exists()).toBeTruthy()
+    expect(wrap.find(NYTimesLogo).exists()).toBeTruthy()
   })
 })

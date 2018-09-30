@@ -1,8 +1,8 @@
 import React from 'react'
 import { Reducer } from 'redux-testkit'
 import { composeBundles } from 'redux-bundler'
-import { initialData } from './config/initial-data'
-import { payloadMock } from './config/payload-mock'
+import { initialData } from '@tests/initial-data'
+import { payloadMock } from '@tests/payload-mock'
 import news from '@bundles/news'
 import extraArgs from '@bundles/extra-args'
 

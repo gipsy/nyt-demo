@@ -22,7 +22,8 @@
     "lint": "eslint src",
     "start": "serve --single --cors dist",
     "test": "jest --coverage",
-    "test:watch": "jest --watch --onlyChanged"
+    "test:watch": "jest --watch --onlyChanged",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "antd": "^3.9.2",
@@ -59,6 +60,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^3.4.11",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-styled-components": "^1.7.1",
@@ -135,13 +137,14 @@
       "^@components(.*)$": "<rootDir>/src/components$1",
       "^@bundles(.*)$": "<rootDir>/src/bundles$1",
       "^@common(.*)$": "<rootDir>/src/common$1",
-      "^@screens(.*)$": "<rootDir>/src/screens$1"
+      "^@screens(.*)$": "<rootDir>/src/screens$1",
+      "^@tests(.*)$": "<rootDir>/src/tests$1"
     },
     "testPathIgnorePatterns": [
       "config/*"
     ],
     "setupFiles": [
-      "<rootDir>/src/__tests__/config/setup.js"
+      "<rootDir>/src/tests/setup.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -152,7 +155,8 @@
       "<rootDir>/src/**/*.js"
     ],
     "coveragePathIgnorePatterns": [
-      "__tests__/*",
+      "__tests__",
+      "tests",
       "styled.js"
     ],
     "coverageThreshold": {

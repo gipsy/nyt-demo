@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { store } from './config/store'
+import { store } from '@tests/store'
 
 import PreviewArticleDrawer from '@components/preview-article-drawer'
 
