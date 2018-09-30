@@ -1,24 +1,12 @@
 import React from 'react'
-import { mount } from 'enzyme'
 import { initialData } from '@tests/initial-data'
+import renderer from 'react-test-renderer'
 
 import NewsItem from '@components/news-item'
 
 describe('NewsItem', () => {
-  let wrap
-  beforeEach(() => {
-    wrap = mount(<NewsItem item={ initialData.news.data[0] } />)
-  })
-
-  afterEach(() => {
-    wrap.unmount()
-  })
-
-  it('renders without crashing', () => {
-    expect(wrap).toMatchSnapshot()
-  })
-
-  it('renders actual component', () => {
-    expect(wrap.find(NewsItem).exists()).toBeTruthy()
+  test('it renders without crashing', () => {
+    const tree = renderer.create(<NewsItem item={ initialData.news.data[0] } />).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

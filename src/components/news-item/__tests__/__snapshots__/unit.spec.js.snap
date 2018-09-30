@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsItem it renders without crashing 1`] = `
+.c0 {
+  display: block;
+}
+
+.c3 {
+  display: block;
+}
+
+.c2 {
+  display: block;
+}
+
+.c5 {
+  font-family: 'Helvetica',sans-serif;
+  color: #ccc;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.c1 {
+  font-family: 'Libre Franklin',sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgb(18,18,18);
+  display: block;
+}
+
+.c4 {
+  font-family: 'Noto Serif KR',sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+<div
+  className="ant-list-item c0"
+>
+  <div
+    className="ant-list-item-extra-wrap"
+  >
+    <div
+      className="ant-list-item-main"
+    >
+      <div
+        className="ant-list-item-content ant-list-item-content-single"
+      >
+        <p
+          className="c1"
+        >
+          The New York Times
+        </p>
+        <div
+          className="ant-list-item-meta c2"
+        >
+          <div
+            className="ant-list-item-meta-avatar"
+          >
+            <span
+              className="ant-avatar c3 ant-avatar-circle ant-avatar-image"
+              style={Object {}}
+            >
+              <img
+                onError={[Function]}
+                src="https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg"
+              />
+            </span>
+          </div>
+          <div
+            className="ant-list-item-meta-content"
+          >
+            <h4
+              className="ant-list-item-meta-title"
+            >
+              <a
+                className="c4"
+                href="https://www.nytimes.com/2018/09/21/travel/singapore-travel-budget.html"
+                onClick={[Function]}
+              >
+                Singapore, for Those Who Aren’t Crazy Rich
+              </a>
+            </h4>
+            <div
+              className="ant-list-item-meta-description"
+            >
+              In the hit movie “Crazy Rich Asians,” the country looks luxe. But it’s easy to have a great time (and eat memorably well) without spending much.
+            </div>
+          </div>
+        </div>
+        <time
+          className="c5"
+        >
+          10 days ago
+        </time>
+      </div>
+    </div>
+    <div
+      className="ant-list-item-extra"
+    >
+      <img
+        alt="logo"
+        src="https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg"
+        width={75}
+      />
+    </div>
+  </div>
+</div>
+`;
