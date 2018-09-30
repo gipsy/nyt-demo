@@ -21,7 +21,8 @@
     "format": "prettier --write \"src/**/*.js\" && echo -e '\\033[0;32m'💅 Just use prettier'\\033[0m'",
     "lint": "eslint src",
     "start": "serve --single --cors dist",
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch --onlyChanged"
   },
   "dependencies": {
     "antd": "^3.9.2",
@@ -137,14 +138,31 @@
       "^@screens(.*)$": "<rootDir>/src/screens$1"
     },
     "testPathIgnorePatterns": [
-      "./config/*"
+      "config/*"
     ],
     "setupFiles": [
       "<rootDir>/src/__tests__/config/setup.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage/",
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "__tests__/*",
+      "styled.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 30,
+        "functions": 30,
+        "lines": 30,
+        "statements": 30
+      }
+    }
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"

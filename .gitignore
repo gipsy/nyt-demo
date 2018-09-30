@@ -6,3 +6,4 @@ npm-debug.logo
 .vscode
 .cache
 yarn-error.log
+coverage/
