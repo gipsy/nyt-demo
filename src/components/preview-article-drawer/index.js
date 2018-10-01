@@ -32,29 +32,27 @@ const PreviewArticleDrawer = ({
   }
 
   return (
-    <>
-      <Drawer
-        width={window.innerWidth < 400 ? '100%' : '50%'}
-        placement="right"
-        closable={true}
-        onClose={() => doCloseDrawer()}
-        visible={drawer}>
-        {previewArticleContent ? (
-          <>
-            <Headline>{headline}</Headline>
-            <Divider />
-            <Source>{source}</Source>
-            <Date>{Moment(date).format('ll')}</Date>
-            {media && <ArticleMedia src={media} />}
-            <Row>
-              <Col span={24}>
-                <Snippet>{snippet}</Snippet>
-              </Col>
-            </Row>
-          </>
-        ) : null}
-      </Drawer>
-    </>
+    <Drawer
+      width={window.innerWidth < 400 ? '100%' : '50%'}
+      placement="right"
+      closable={true}
+      onClose={() => doCloseDrawer()}
+      visible={drawer}>
+      {previewArticleContent
+      ? <>
+          <Headline>{headline}</Headline>
+          <Divider />
+          <Source>{source}</Source>
+          <Date>{Moment(date).format('ll')}</Date>
+          {media && <ArticleMedia src={media} />}
+          <Row>
+            <Col span={24}>
+              <Snippet>{snippet}</Snippet>
+            </Col>
+          </Row>
+        </>
+      : null}
+    </Drawer>
   )
 }
 

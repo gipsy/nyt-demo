@@ -91,11 +91,11 @@ describe('bundles/news', () => {
     expect(store.selectPreviewArticleContent().headline.main).toEqual('Singapore, for Those Who Aren’t Crazy Rich')
   })
 
-  it('should change drawer state to true', () => {
-    const e = { preventDefault: jest.fn() }
-    store.doPreviewArticle(e, '5ba46d04068401528a2dc251')
-    expect(store.selectDrawer()).toEqual(true)
-  })
+  // it('should change drawer state to true', () => {
+  //   const e = { preventDefault: jest.fn() }
+  //   store.doPreviewArticle(e, '5ba46d04068401528a2dc251')
+  //   expect(store.selectDrawer()).toEqual(true)
+  // })
 
   it('should change drawer state to false', () => {
     store.doCloseDrawer()
