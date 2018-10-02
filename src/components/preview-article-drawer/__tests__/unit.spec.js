@@ -1,15 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import renderer from 'react-test-renderer'
-import getElementWithContext from 'react-test-context-provider'
-import getStore from '@bundles'
+import { render } from '@tests/utils/render-with-app-context'
 import { initialData } from '@tests/initial-data'
 
 import PreviewArticleDrawer from '@components/preview-article-drawer'
 
-const activeDrawerContext = {...initialData, news: { ...initialData.news, drawer: true }}
-const store = getStore(activeDrawerContext)
-describe('PreviewArticleDrawer', () => {
+describe('<PreviewArticleDrawer />', () => {
   beforeAll(() => {
     ReactDOM.createPortal = jest.fn((element, node) => {
       return element
@@ -20,9 +16,9 @@ describe('PreviewArticleDrawer', () => {
     ReactDOM.createPortal.mockClear()
   })
 
-  test('renders without crashing', () => {
-    const el = getElementWithContext({ store }, <PreviewArticleDrawer />)
-    const component = renderer.create(el).toJSON()
-    expect(component).toMatchSnapshot()
+  test('should match snapshot', () => {
+    const context = {...initialData, news: { ...initialData.news, drawer: true }}
+    const { container } = render(<PreviewArticleDrawer />, context)
+    expect(container).toMatchSnapshot()
   })
 })

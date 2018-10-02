@@ -262,7 +262,7 @@ exports[`<NewsList /> should match snapshot 1`] = `
                 <time
                   class="c6"
                 >
-                  11 days ago
+                  12 days ago
                 </time>
               </div>
             </div>
