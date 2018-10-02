@@ -1,18 +1,12 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import getElementWithContext from 'react-test-context-provider'
-import { store } from '@tests/store'
+import { render } from '@tests/utils/render-with-app-context'
 
 import NYTimesLogo from '@components/nyt-logo'
 
-describe('NYTimesLogo', () => {
-  test('renders without crashing', () => {
-    const el = getElementWithContext({ store }, <NYTimesLogo />)
-    const component = renderer.create(el).toJSON()
-    expect(component).toMatchSnapshot()
-  })
+describe('<NYTimesLogo />', () => {
+  const { container } = render(<NYTimesLogo />)
 
-  // it('renders actual component', () => {
-  //   expect(wrap.find(NYTimesLogo).exists()).toBeTruthy()
-  // })
+  test('should match snapshot', () => {
+    expect(container).toMatchSnapshot()
+  })
 })

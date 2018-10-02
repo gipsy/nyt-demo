@@ -1,14 +1,12 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import getElementWithContext from 'react-test-context-provider'
-import { store } from '@tests/store'
+import { render, fireEvent } from '@tests/utils/render-with-app-context'
 
 import NewsList from '@components/news-list'
 
-describe('NewsList', () => {
-  test('it renders without crashing', () => {
-    const element = getElementWithContext({store}, <NewsList />)
-    const component = renderer.create(element).toJSON()
-    expect(component).toMatchSnapshot()
+describe('<NewsList />', () => {
+  const { container } = render(<NewsList />)
+
+  test('should match snapshot', () => {
+    expect(container).toMatchSnapshot()
   })
 })

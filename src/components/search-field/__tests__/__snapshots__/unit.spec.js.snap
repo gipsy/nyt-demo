@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchField renders without crashing 1`] = `
+exports[`<SearchField /> should match snapshot 1`] = `
 .c1 {
   display: block;
 }
@@ -16,34 +16,31 @@ exports[`SearchField renders without crashing 1`] = `
   }
 }
 
-<div
-  className="c0"
->
-  <span
-    className="ant-input-search c1 ant-input-search-enter-button ant-input-search-large ant-input-affix-wrapper ant-input-affix-wrapper-lg"
+<div>
+  <div
+    class="c0"
   >
-    <input
-      className="ant-input ant-input-lg"
-      disabled={false}
-      onKeyDown={[Function]}
-      placeholder="input search text"
-      size="large"
-      style={null}
-      type="text"
-    />
     <span
-      className="ant-input-suffix"
+      class="ant-input-search c1 ant-input-search-enter-button ant-input-search-large ant-input-affix-wrapper ant-input-affix-wrapper-lg"
     >
-      <button
-        className="ant-btn ant-input-search-button ant-btn-primary ant-btn-lg"
-        onClick={[Function]}
-        type="button"
+      <input
+        class="ant-input ant-input-lg"
+        placeholder="input search text"
+        type="text"
+      />
+      <span
+        class="ant-input-suffix"
       >
-        <span>
-          Search
-        </span>
-      </button>
+        <button
+          class="ant-btn ant-input-search-button ant-btn-primary ant-btn-lg"
+          type="button"
+        >
+          <span>
+            Search
+          </span>
+        </button>
+      </span>
     </span>
-  </span>
+  </div>
 </div>
 `;

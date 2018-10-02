@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NewsItem it renders without crashing 1`] = `
+exports[`<NewsItem /> should match snapshot 1`] = `
 .c0 {
   display: block;
 }
@@ -35,75 +35,74 @@ exports[`NewsItem it renders without crashing 1`] = `
   font-weight: bold;
 }
 
-<div
-  className="ant-list-item c0"
->
+<div>
   <div
-    className="ant-list-item-extra-wrap"
+    class="ant-list-item c0"
   >
     <div
-      className="ant-list-item-main"
+      class="ant-list-item-extra-wrap"
     >
       <div
-        className="ant-list-item-content ant-list-item-content-single"
+        class="ant-list-item-main"
       >
-        <p
-          className="c1"
-        >
-          The New York Times
-        </p>
         <div
-          className="ant-list-item-meta c2"
+          class="ant-list-item-content ant-list-item-content-single"
         >
-          <div
-            className="ant-list-item-meta-avatar"
+          <p
+            class="c1"
           >
-            <span
-              className="ant-avatar c3 ant-avatar-circle ant-avatar-image"
-              style={Object {}}
-            >
-              <img
-                onError={[Function]}
-                src="https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg"
-              />
-            </span>
-          </div>
+            The New York Times
+          </p>
           <div
-            className="ant-list-item-meta-content"
+            class="ant-list-item-meta c2"
           >
-            <h4
-              className="ant-list-item-meta-title"
-            >
-              <a
-                className="c4"
-                href="https://www.nytimes.com/2018/09/21/travel/singapore-travel-budget.html"
-                onClick={[Function]}
-              >
-                Singapore, for Those Who Aren’t Crazy Rich
-              </a>
-            </h4>
             <div
-              className="ant-list-item-meta-description"
+              class="ant-list-item-meta-avatar"
             >
-              In the hit movie “Crazy Rich Asians,” the country looks luxe. But it’s easy to have a great time (and eat memorably well) without spending much.
+              <span
+                class="ant-avatar c3 ant-avatar-circle ant-avatar-image"
+              >
+                <img
+                  src="https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg"
+                />
+              </span>
+            </div>
+            <div
+              class="ant-list-item-meta-content"
+            >
+              <h4
+                class="ant-list-item-meta-title"
+              >
+                <a
+                  class="c4"
+                  href="https://www.nytimes.com/2018/09/21/travel/singapore-travel-budget.html"
+                >
+                  Singapore, for Those Who Aren’t Crazy Rich
+                </a>
+              </h4>
+              <div
+                class="ant-list-item-meta-description"
+              >
+                In the hit movie “Crazy Rich Asians,” the country looks luxe. But it’s easy to have a great time (and eat memorably well) without spending much.
+              </div>
             </div>
           </div>
+          <time
+            class="c5"
+          >
+            11 days ago
+          </time>
         </div>
-        <time
-          className="c5"
-        >
-          10 days ago
-        </time>
       </div>
-    </div>
-    <div
-      className="ant-list-item-extra"
-    >
-      <img
-        alt="logo"
-        src="https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg"
-        width={75}
-      />
+      <div
+        class="ant-list-item-extra"
+      >
+        <img
+          alt="logo"
+          src="https://www.randjsc.com/wp-content/uploads/2015/05/NYT-logo-square-150x150.jpg"
+          width="75"
+        />
+      </div>
     </div>
   </div>
 </div>

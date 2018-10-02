@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer'
 import getElementWithContext from 'react-test-context-provider'
 import getStore from '@bundles'
 import { initialData } from '@tests/initial-data'
-// import { store } from '@tests/store'
 
 import PreviewArticleDrawer from '@components/preview-article-drawer'
 
@@ -24,11 +23,6 @@ describe('PreviewArticleDrawer', () => {
   test('renders without crashing', () => {
     const el = getElementWithContext({ store }, <PreviewArticleDrawer />)
     const component = renderer.create(el).toJSON()
-    console.log(component)
     expect(component).toMatchSnapshot()
   })
-
-  // it('renders actual component', () => {
-  //   expect(wrap.find(PreviewArticleDrawer).exists()).toBeTruthy()
-  // })
 })

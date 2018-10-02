@@ -1,23 +1,12 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import getElementWithContext from 'react-test-context-provider'
-import { store } from '@tests/store'
+import { render } from '@tests/utils/render-with-app-context'
 
 import SearchField from '@components/search-field'
 
-describe('SearchField', () => {
+describe('<SearchField />', () => {
+  const { container } = render(<SearchField />)
 
-  it('renders without crashing', () => {
-    const el = getElementWithContext({ store }, <SearchField />)
-    const component = renderer.create(el).toJSON()
-    expect(component).toMatchSnapshot()
+  test('should match snapshot', () => {
+    expect(container).toMatchSnapshot()
   })
-
-  // it('renders actual component', () => {
-  //   expect(wrap.find(SearchField).exists()).toBeTruthy()
-  // })
-  //
-  // it('renders button with appropriate text', () => {
-  //   expect(wrap.find('button').text()).toEqual('Search')
-  // })
 })
