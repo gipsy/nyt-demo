@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> should match snapshot 1`] = `
+.c2 {
+  display: block;
+}
+
+.c1 {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.c0 {
+  font-family: 'Noto Serif KR',sans-serif;
+  color: #000;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width:600px) {
+  .c1 {
+    width: 100%;
+  }
+}
+
+<div>
+  <h2
+    class="c0"
+  >
+    What news are you looking for ?
+  </h2>
+  <div
+    class="c1"
+  >
+    <span
+      class="ant-input-search c2 ant-input-search-enter-button ant-input-search-large ant-input-affix-wrapper ant-input-affix-wrapper-lg"
+    >
+      <input
+        class="ant-input ant-input-lg"
+        placeholder="input search text"
+        type="text"
+      />
+      <span
+        class="ant-input-suffix"
+      >
+        <button
+          class="ant-btn ant-input-search-button ant-btn-primary ant-btn-lg"
+          type="button"
+        >
+          <span>
+            Search
+          </span>
+        </button>
+      </span>
+    </span>
+  </div>
+</div>
+`;

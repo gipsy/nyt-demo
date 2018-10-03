@@ -37,7 +37,9 @@ const PreviewArticleDrawer = ({
       placement="right"
       closable={true}
       onClose={() => doCloseDrawer()}
-      visible={drawer}>
+      visible={drawer}
+      extra={"data-testid='drawer'"}
+    >
       {previewArticleContent
       ? <>
           <Headline>{headline}</Headline>

@@ -5,7 +5,7 @@ import getStore from '@bundles'
 import { initialData } from '@tests/initial-data'
 
 const customRender = (node, ...options) => {
-  const [ context ] = options
+  const [{ context } = {}] = options
   return render(
     <Provider store={getStore(context || initialData)}>
       {node}
