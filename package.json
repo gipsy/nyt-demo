@@ -63,7 +63,7 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^3.4.11",
     "babel-eslint": "^9.0.0",
-    "babel-loader": "^8.0.0",
+    "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.7.1",
     "babel-runtime": "^6.26.0",
     "css-loader": "^1.0.0",
