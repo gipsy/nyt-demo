@@ -9492,9 +9492,9 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-bundler-react@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/redux-bundler-react/-/redux-bundler-react-1.0.1.tgz#4902b4ccfbb07eaa730bd257c9ac9521ab966978"
+redux-bundler-react@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/redux-bundler-react/-/redux-bundler-react-1.1.1.tgz#2a4b085212cc9673f37beb52b1877d053d47cbfa"
 
 redux-bundler@^21.2.2:
   version "21.2.2"
