@@ -9496,9 +9496,9 @@ redux-bundler-react@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/redux-bundler-react/-/redux-bundler-react-1.0.1.tgz#4902b4ccfbb07eaa730bd257c9ac9521ab966978"
 
-redux-bundler@^21.2.2:
-  version "21.2.2"
-  resolved "https://registry.yarnpkg.com/redux-bundler/-/redux-bundler-21.2.2.tgz#364612b3e3eb313bb1fce07415e3d2430d7ee59a"
+redux-bundler@^25.0.0:
+  version "25.0.0"
+  resolved "https://registry.yarnpkg.com/redux-bundler/-/redux-bundler-25.0.0.tgz#138b700353be2349e50c90ca847bb3bd2af0c3de"
 
 redux-testkit@^1.0.6:
   version "1.0.6"
